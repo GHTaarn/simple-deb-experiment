@@ -7,5 +7,5 @@ Maintainer: https://github.com/GHTaarn/simple-deb-experiment/issues
 Homepage: https://github.com/GHTaarn/simple-deb-experiment
 Depends:
 Description: Test file for a demo on building a Debian package
-Test file for a demonstration of how to build a Debian package
+ Test file for a demonstration of how to build a Debian package
 
