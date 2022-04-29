@@ -1,8 +1,9 @@
-TARGET=simple-deb-experiment.deb
+PROJNAME=simple-deb-experiment
+TARGET=$(PROJNAME).deb
 
 $(TARGET):
 	mkdir -p debian/usr/bin
-	cp src/simple-deb-experiment.sh debian/usr/bin/simple-deb-experiment
+	cp src/$(PROJNAME).sh debian/usr/bin/$(PROJNAME)
 	dpkg -b debian
 	mv debian.deb $(TARGET)
 
