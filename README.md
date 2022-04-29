@@ -30,9 +30,9 @@ which simple-deb-experiment
 simple-deb-experiment
 ```
 
-The point of this project is that you can make changes to `src/`,
-`packaging-files/control`, `Makefile` etc to make a Debian package for your own
-project. The `Makefile` has some convenient targets so that everything can be
+The point of this project is that you can put your own project into `src/` and
+modify the other files to create a deb package for your project.
+The `Makefile` has some convenient targets so that everything can be
 done in one go with the command `make clean installtest` or
 `make thoroughclean installtest`.
 
