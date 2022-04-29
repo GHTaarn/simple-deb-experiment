@@ -5,7 +5,9 @@ $(TARGET):
 	mkdir -p debian/DEBIAN
 	mkdir -p debian/usr/bin
 	mkdir -p debian/usr/share/doc/$(PROJNAME)/
-	cp packaging-files/control debian/DEBIAN/
+	echo "Package: $(PROJNAME)" > debian/DEBIAN/control
+	src/$(PROJNAME).sh | head -1 >> debian/DEBIAN/control # Version line
+	cat packaging-files/control-part2.txt >> debian/DEBIAN/control
 	cp src/$(PROJNAME).sh debian/usr/bin/$(PROJNAME)
 	cp LICENSE debian/usr/share/doc/$(PROJNAME)/copyright
 	chmod -R g-w debian
