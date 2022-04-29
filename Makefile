@@ -18,3 +18,26 @@ clean:
 thoroughclean:
 	-rm *.deb
 	make clean
+
+test: $(TARGET)
+	lintian $(TARGET)
+
+install: $(TARGET)
+	sudo dpkg -i $(TARGET)
+
+uninstall:
+	sudo dpkg -r $(PROJNAME)
+
+installtest:
+	make test
+	make install
+	dpkg -l $(PROJNAME)
+	apt show $(PROJNAME)
+	which $(PROJNAME)
+	$(PROJNAME)
+	make uninstall
+	-dpkg -l $(PROJNAME)
+	-apt show $(PROJNAME)
+	-which $(PROJNAME)
+	-$(PROJNAME)
+
